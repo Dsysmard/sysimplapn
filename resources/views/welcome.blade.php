@@ -71,23 +71,20 @@
                     @if (Auth::check())
                         <a href="{{ url('/home') }}">Home</a>
                     @else
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
+                        <a href="{{ url('/login') }}">ACCESO</a>
+                        <a href="{{ url('/register') }}">REGISTRO</a>
                     @endif
                 </div>
             @endif
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    <img src="{{url('imagenes/logo_implan_color_256.png')}}">
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <h3>SISTEMA PARA EL CONTROL DE INDICADORES</h3>
+                    <h3><small>Desarrollado por ING. Miguel Angel Reyna Davila</small></h3>
                 </div>
             </div>
         </div>
