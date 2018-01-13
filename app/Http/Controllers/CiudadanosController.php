@@ -16,21 +16,26 @@ class CiudadanosController extends Controller
     public function index()
     {
         $ciudadanos = Ciudadano::all();
-        return \View::make('desarrollosocial.index', compact('ciudadanos'));
+        return \View::make('desarrollosocial.ciudadanos.index', compact('ciudadanos'));
     }
 
-    public function search(Request $request){
-         $ciudadanos = Ciudadano::where('curp','like','%'.$request->curp.'%')->get(); 
+    public function search(Request $request)
+    {
+        
+        $ciudadanos = Ciudadano::where('curp','like','%'.$request->curp.'%')->get(); 
 
         //Cambiando la clausula de conexion soportada por Heroku ya que utiliza postgresql y no mysql
         //$pedidos = Pedido::where('idcliente', '=', $request->idcliente)->get();
-        return \View::make('desarrollosocial.index',compact('ciudadanos'));
+        return \View::make('desarrollosocial.ciudadanos.index',compact('ciudadanos'));
+    
     }
 
     
     public function create()
     {
-    return \View::make('desarrollosocial.create');        
+
+    return \View::make('desarrollosocial.ciudadanos.create');        
+    
     }
 
     public function store(Request $request)
@@ -67,7 +72,7 @@ class CiudadanosController extends Controller
     public function edit($id)
     {
         $ciudadano = Ciudadano::find($id);
-        return view ('desarrollosocial.update',["ciudadano" => $ciudadano]);
+        return view ('desarrollosocial.ciudadanos.update',["ciudadano" => $ciudadano]);
     }
 
     public function update(Request $request, $id)
