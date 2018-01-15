@@ -27,3 +27,9 @@ Route::resource('desarrollosocial/municipios', 'MunicipiosController');
 Route::get('municipios/destroy/{id}', ['as' => 'municipios/destroy', 'uses' => 'MunicipiosController@destroy']);
 Route::post('municipios/search', ['as' => 'municipios/search', 'uses'=>'MunicipiosController@search']);
 /*------------------------------------------------------------------------------------------------------------*/
+
+/* --------------------------------CRUD para registrar secciones---------------------------------------------*/
+Route::resource('desarrollosocial/secciones', 'SeccionesController');
+Route::get('secciones/destroy/{id}', ['as' => 'secciones/destroy', 'uses' => 'SeccionesController@destroy']);
+Route::post('secciones/search', ['as' => 'secciones/search', 'uses'=>'SeccionesController@search']);
+/*------------------------------------------------------------------------------------------------------------*/

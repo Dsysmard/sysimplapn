@@ -16,7 +16,8 @@ class MunicipiosController extends Controller
         return \View::make('desarrollosocial.municipios.index', compact('municipios'));
     }
 
-    public function search(Request $request){
+    public function search(Request $request)
+    {
          $municipios = Municipio::where('id_municipio','like','%'.$request->id_municipio.'%')->get(); 
 
         //Cambiando la clausula de conexion soportada por Heroku ya que utiliza postgresql y no mysql
