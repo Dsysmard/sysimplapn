@@ -49,7 +49,7 @@ class EstadosController extends Controller
 
     public function edit($id)
     {
-         $estado = Estado::find($id);
+        $estado = Estado::find($id);
         return view ('desarrollosocial.estados.update',["estado" => $estado]);
     }
 

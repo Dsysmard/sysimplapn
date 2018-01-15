@@ -39,3 +39,9 @@ Route::resource('desarrollosocial/localidades', 'LocalidadesController');
 Route::get('localidades/destroy/{id}', ['as' => 'localidades/destroy', 'uses' => 'LocalidadesController@destroy']);
 Route::post('localidades/search', ['as' => 'localidades/search', 'uses'=>'LocalidadesController@search']);
 /*------------------------------------------------------------------------------------------------------------*/
+
+/* --------------------------------CRUD para registrar apoyos---------------------------------------------*/
+Route::resource('desarrollosocial/apoyos', 'ApoyosController');
+Route::get('apoyos/destroy/{id}', ['as' => 'apoyos/destroy', 'uses' => 'ApoyosController@destroy']);
+Route::post('apoyos/search', ['as' => 'apoyos/search', 'uses'=>'ApoyosController@search']);
+/*------------------------------------------------------------------------------------------------------------*/
