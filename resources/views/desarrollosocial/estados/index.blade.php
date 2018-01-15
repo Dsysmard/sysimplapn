@@ -20,8 +20,8 @@
             <thead class="nav nav-tabs white-text">
                 <tr>
                   <th>ID</th>
-                  <th>Nombre</th>
-                  <th>Apellido</th>
+                  <th>ID Estado</th>
+                  <th>Nombre del Estado</th>
                   <th>Acciones</th>
                 </tr>
             </thead>
