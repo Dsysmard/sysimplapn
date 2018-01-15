@@ -73,7 +73,7 @@ class SeccionesController extends Controller
 
     public function destroy($id)
     {
-        $secciones = Seccion::find($id);
+        $secciones = Seccionphp::find($id);
         $secciones->delete();
         return redirect()->back();
     }

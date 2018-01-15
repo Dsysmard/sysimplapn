@@ -33,3 +33,9 @@ Route::resource('desarrollosocial/secciones', 'SeccionesController');
 Route::get('secciones/destroy/{id}', ['as' => 'secciones/destroy', 'uses' => 'SeccionesController@destroy']);
 Route::post('secciones/search', ['as' => 'secciones/search', 'uses'=>'SeccionesController@search']);
 /*------------------------------------------------------------------------------------------------------------*/
+
+/* --------------------------------CRUD para registrar localidades---------------------------------------------*/
+Route::resource('desarrollosocial/localidades', 'LocalidadesController');
+Route::get('localidades/destroy/{id}', ['as' => 'localidades/destroy', 'uses' => 'LocalidadesController@destroy']);
+Route::post('localidades/search', ['as' => 'localidades/search', 'uses'=>'LocalidadesController@search']);
+/*------------------------------------------------------------------------------------------------------------*/

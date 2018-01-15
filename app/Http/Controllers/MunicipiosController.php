@@ -10,6 +10,7 @@ class MunicipiosController extends Controller
     {
         $this->middleware('auth');
     }
+    
     public function index()
     {
         $municipios = Municipio::all();
