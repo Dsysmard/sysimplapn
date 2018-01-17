@@ -45,3 +45,9 @@ Route::resource('desarrollosocial/apoyos', 'ApoyosController');
 Route::get('apoyos/destroy/{id}', ['as' => 'apoyos/destroy', 'uses' => 'ApoyosController@destroy']);
 Route::post('apoyos/search', ['as' => 'apoyos/search', 'uses'=>'ApoyosController@search']);
 /*------------------------------------------------------------------------------------------------------------*/
+
+/* --------------------------------CRUD para registrar salidas de apoyos---------------------------------------------*/
+Route::resource('desarrollosocial/salidas', 'SalidasDesarrolloSocialController');
+Route::get('salidas/destroy/{id}', ['as' => 'salidas/destroy', 'uses' => 'SalidasDesarrolloSocialController@destroy']);
+Route::post('salidas/search', ['as' => 'salidas/search', 'uses'=>'SalidasDesarrolloSocialController@search']);
+/*------------------------------------------------------------------------------------------------------------*/
