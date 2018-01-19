@@ -28,7 +28,7 @@ class CreateCiudadanosTable extends Migration
             $table->string('curp')->unique();
             $table->string('emision');
             $table->string('vigencia');
-            $table->string('fotoine');
+            $table->string('fotoine')->default('default.jpg');
             $table->timestamps();
         });
     }

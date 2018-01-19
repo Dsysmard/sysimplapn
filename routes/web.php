@@ -1,5 +1,6 @@
 <?php
 
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -14,6 +15,7 @@ Route::get('/home', 'HomeController@index');
 Route::resource('desarrollosocial/ciudadanos', 'CiudadanosController');
 Route::get('ciudadanos/destroy/{id}', ['as' => 'ciudadanos/destroy', 'uses' => 'CiudadanosController@destroy']);
 Route::post('ciudadanos/search', ['as' => 'ciudadanos/search', 'uses'=>'CiudadanosController@search']);
+
 /*------------------------------------------------------------------------------------------------------------*/
 
 /* --------------------------------CRUD para registrar estados---------------------------------------------*/
@@ -47,7 +49,11 @@ Route::post('apoyos/search', ['as' => 'apoyos/search', 'uses'=>'ApoyosController
 /*------------------------------------------------------------------------------------------------------------*/
 
 /* --------------------------------CRUD para registrar salidas de apoyos---------------------------------------------*/
+
 Route::resource('desarrollosocial/salidas', 'SalidasDesarrolloSocialController');
 Route::get('salidas/destroy/{id}', ['as' => 'salidas/destroy', 'uses' => 'SalidasDesarrolloSocialController@destroy']);
 Route::post('salidas/search', ['as' => 'salidas/search', 'uses'=>'SalidasDesarrolloSocialController@search']);
 /*------------------------------------------------------------------------------------------------------------*/
+
+Route::get('profile','UserController@profile');
+Route::post('profile', 'UserController@update_avatar');

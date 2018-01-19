@@ -77,10 +77,14 @@
                       {!! Form::text('vigencia', null, ['class' => 'form-control' , 'required' => 'required','placeholder'=>'VIGENCIA DEL INE']) !!}
                   </div>
 
-                  <div class="form-group">
-                      {!! Form::label('FOTO INE:', 'FOTO INE:') !!}
-                      {!! Form::text('fotoine', null, ['class' => 'form-control' , 'required' => 'required','placeholder'=>'FOTO DEL INE']) !!}
-                  </div>
+                  {{-- <div class="col-md-10 col-md-offset-1">
+                        {!! Form::label('CARGAR FOTO INE:','CARGAR FOTO INE:') !!}
+                        {!! Form::file('fotoine') !!}
+                        <label>Cargar Foto INE</label>
+                        <input type="file" name="fotoine">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        
+                  </div> --}}
 
                 <div class="form-group">
                       {!! Form::submit('Enviar', ['class' => 'btn btn-success ' ] ) !!}

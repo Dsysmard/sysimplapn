@@ -66,9 +66,9 @@
                 <ul class="dropdown-menu">
                   <!-- User image -->
                   <li class="user-header">
-                    
+                    <img src="/uploads/avatars/{{ Auth::user()->avatar }}" style="width:90px; height:90px; float:center; border-radius:50%; margin-right:25px;">
                     <p>
-                      www.implanpn.gob.mx - Desarrollando Software
+                      www.implanpn.gob.mx - Desarrollandor Software
                       <small>ING. Miguel Ángel Reyna Dávila</small>
                     </p>
                   </li>
@@ -77,7 +77,8 @@
                   <li class="user-footer">
                     
                     <div class="pull-right">
-                      <a href="#" class="btn btn-default btn-flat">Cerrar</a>
+                    <a href="{{ url('/profile') }}" class="btn btn-default btn-flat">Perfil</a>
+                      <a href="{{ url('/logout') }}" class="btn btn-default btn-flat">Cerrar</a>
                     </div>
                   </li>
                 </ul>
@@ -100,7 +101,7 @@
             
             <li class="treeview">
               <a href="{{url('desarrollosocial/ciudadanos')}}">
-                <i class="fa fa-laptop"></i>
+                {{-- <i class="fa fa-laptop"></i> --}}
                 <span>Ciudadanos</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
@@ -113,7 +114,7 @@
             
             <li class="treeview">
               <a href="{{url('desarrollosocial/estados')}}">
-                <i class="fa fa-th"></i>
+                {{-- <i class="fa fa-th"></i> --}}
                 <span>Estado</span>
                  <i class="fa fa-angle-left pull-right"></i>
               </a>
@@ -126,7 +127,7 @@
 
             <li class="treeview">
               <a href="{{url('desarrollosocial/municipios')}}">
-                <i class="fa fa-shopping-cart"></i>
+                {{-- <i class="fa fa-shopping-cart"></i> --}}
                 <span>Municipio</span>
                  <i class="fa fa-angle-left pull-right"></i>
               </a>
@@ -139,7 +140,7 @@
 
             <li class="treeview">
               <a href="{{url('desarrollosocial/secciones')}}">
-                <i class="fa fa-shopping-cart"></i>
+                {{-- <i class="fa fa-shopping-cart"></i> --}}
                 <span>Seccion</span>
                  <i class="fa fa-angle-left pull-right"></i>
               </a>
@@ -152,7 +153,7 @@
 
             <li class="treeview">
               <a href="{{url('desarrollosocial/localidades')}}">
-                <i class="fa fa-shopping-cart"></i>
+                {{-- <i class="fa fa-shopping-cart"></i> --}}
                 <span>Localidad</span>
                  <i class="fa fa-angle-left pull-right"></i>
               </a>
@@ -165,7 +166,7 @@
 
             <li class="treeview">
               <a href="{{url('desarrollosocial/apoyos')}}">
-                <i class="fa fa-shopping-cart"></i>
+                {{-- <i class="fa fa-shopping-cart"></i> --}}
                 <span>Apoyo</span>
                  <i class="fa fa-angle-left pull-right"></i>
               </a>
@@ -178,7 +179,7 @@
 
             <li class="treeview">
               <a href="{{url('desarrollosocial/salidas')}}">
-                <i class="fa fa-shopping-cart"></i>
+                {{-- <i class="fa fa-shopping-cart"></i> --}}
                 <span>Entrega de apoyo</span>
                  <i class="fa fa-angle-left pull-right"></i>
               </a>
@@ -191,7 +192,8 @@
                        
             <li class="treeview">
               <a href="#">
-                <i class="fa fa-folder"></i> <span>Acceso</span>
+                {{-- <i class="fa fa-folder"></i> --}} 
+                <span>Acceso</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
@@ -201,13 +203,15 @@
             </li>
              <li>
               <a href="#">
-                <i class="fa fa-plus-square"></i> <span>Ayuda</span>
+                <i class="fa fa-plus-square"></i> 
+                <span>Ayuda</span>
                 <small class="label pull-right bg-red">PDF</small>
               </a>
             </li>
             <li>
               <a href="#">
-                <i class="fa fa-info-circle"></i> <span>Acerca De...</span>
+                <i class="fa fa-info-circle"></i> 
+                <span>Acerca De...</span>
                 <small class="label pull-right bg-yellow">Miguel Angel Reyna</small>
               </a>
             </li>

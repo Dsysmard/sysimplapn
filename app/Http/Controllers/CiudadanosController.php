@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Ciudadano as Ciudadano;
-
+use App\User as User;
+use Auth;
+use Image;
 
 class CiudadanosController extends Controller
 {
@@ -28,6 +30,27 @@ class CiudadanosController extends Controller
         //$pedidos = Pedido::where('idcliente', '=', $request->idcliente)->get();
         return \View::make('desarrollosocial.ciudadanos.index',compact('ciudadanos'));
     
+    }
+
+    public function profile(){
+        return view('desarrollosocial.usuarios.profile', array('user' => Auth::user()) );
+    }
+
+    public function update_avatar(Request $request){
+
+        // Handle the user upload of avatar
+        if($request->hasFile('avatar')){
+            $avatar = $request->file('avatar');
+            $filename = time() . '.' . $avatar->getClientOriginalExtension();
+            Image::make($avatar)->resize(300, 300)->save( public_path('uploads/avatars/' . $filename ) );
+
+            $user = Auth::user();
+            $user->avatar = $filename;
+            $user->save();
+        }
+
+        return view('desarrollosocial.usuarios.profile', array('user' => Auth::user()) );
+
     }
 
     
@@ -58,8 +81,19 @@ class CiudadanosController extends Controller
         $ciudadano->vigencia = $request->vigencia;
         $ciudadano->fotoine = $request->fotoine;
 
-        $ciudadano->save();
 
+        // if($request->hasFile('fotoine')){
+        //     $avatar = $request->file('fotoine');
+        //     $filename = time() . '.' . $avatar->getClientOriginalExtension();
+        //     Image::make($avatar)->resize(300, 300)->save( public_path('/uploads/avatars/' . $filename ) );
+
+        //     $ciudadano = Ciudadano::ciudadano();
+        //     $ciudadano->avatar = $filename;
+        //     $ciudadano->save();
+        // }
+
+        
+        $ciudadano->save();
         return redirect('desarrollosocial/ciudadanos');
     }
 
