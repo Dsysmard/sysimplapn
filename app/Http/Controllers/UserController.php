@@ -7,11 +7,13 @@ use Auth;
 use Image;
 class UserController extends Controller
 {
-    public function __construct(){
-
-    }
+    public function __construct()
+    {
+        $this->middleware('auth');
+    } 
     
-    public function profile(){
+    public function profile()
+    {
     	return view('desarrollosocial.usuarios.profile', array('user' => Auth::user()) );
     }
 

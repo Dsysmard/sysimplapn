@@ -79,7 +79,7 @@ class CiudadanosController extends Controller
         $ciudadano->curp = $request->curp;
         $ciudadano->emision = $request->emision;
         $ciudadano->vigencia = $request->vigencia;
-        $ciudadano->fotoine = $request->fotoine;
+        // $ciudadano->fotoine = $request->fotoine;
 
 
         // if($request->hasFile('fotoine')){
@@ -127,7 +127,7 @@ class CiudadanosController extends Controller
         $ciudadano->curp = $request->curp;
         $ciudadano->emision = $request->emision;
         $ciudadano->vigencia = $request->vigencia;
-        $ciudadano->fotoine = $request->fotoine;
+        // $ciudadano->fotoine = $request->fotoine;
 
         if($ciudadano->save())
         {
