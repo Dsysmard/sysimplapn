@@ -79,18 +79,18 @@ class CiudadanosController extends Controller
         $ciudadano->curp = $request->curp;
         $ciudadano->emision = $request->emision;
         $ciudadano->vigencia = $request->vigencia;
-        // $ciudadano->fotoine = $request->fotoine;
+        
 
 
-        // if($request->hasFile('fotoine')){
-        //     $avatar = $request->file('fotoine');
-        //     $filename = time() . '.' . $avatar->getClientOriginalExtension();
-        //     Image::make($avatar)->resize(300, 300)->save( public_path('/uploads/avatars/' . $filename ) );
+        if($request->hasFile('fotoine')){
+            $fotoine = $request->file('fotoine');
+            $filename = time() . '.' . $fotoine->getClientOriginalExtension();
+            Image::make($fotoine)->resize(300, 300)->save( public_path('/uploads/avatars/' . $filename ) );
 
-        //     $ciudadano = Ciudadano::ciudadano();
-        //     $ciudadano->avatar = $filename;
-        //     $ciudadano->save();
-        // }
+            $ciudadano->fotoine = $request->fotoine;
+            $ciudadano->fotoine = $filename;
+            $ciudadano->save();
+        }
 
         
         $ciudadano->save();
@@ -127,7 +127,7 @@ class CiudadanosController extends Controller
         $ciudadano->curp = $request->curp;
         $ciudadano->emision = $request->emision;
         $ciudadano->vigencia = $request->vigencia;
-        // $ciudadano->fotoine = $request->fotoine;
+        $ciudadano->fotoine = $request->fotoine;
 
         if($ciudadano->save())
         {

@@ -54,7 +54,8 @@
                     <td>{{ $ciudadano->curp}}</td>
                     <td>{{ $ciudadano->emision}}</td>
                     <td>{{ $ciudadano->vigencia}}</td>
-                    <td>{{ $ciudadano->fotoine}}</td>
+                    <td><img src="/uploads/avatars/{{ $ciudadano->fotoine}}" style="width:150px; height:150px; float:left; border-radius:0%; margin-right:25px;">
+                    </td>
                     
                     <td>
                          <a class="btn btn-primary " href="{{ url('desarrollosocial/ciudadanos/' .$ciudadano->id .'/edit')}}" >Editar</a>

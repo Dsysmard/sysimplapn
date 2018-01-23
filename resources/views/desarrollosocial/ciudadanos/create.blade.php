@@ -8,7 +8,8 @@
 </div>
 	<div class="row jumbotron " style="padding-top: 20px;border-top-width: 20px;margin-top: 30px;">
 		<div class="col-md-10 col-md-offset-1" style="margin: 2% 50px 75px 100px;">
-			{!! Form::open(['route' => 'ciudadanos.store', 'method' => 'post', 'novalidate']) !!}
+			{!! Form::open(['route' => 'ciudadanos.store', 'method' => 'post', 'novalidate','files' => true] 
+      ) !!}
 
                   <div class="form-group">
                       {!! Form::label('NOMBRE:', 'NOMBRE:') !!}
@@ -77,14 +78,14 @@
                       {!! Form::text('vigencia', null, ['class' => 'form-control' , 'required' => 'required','placeholder'=>'VIGENCIA DEL INE']) !!}
                   </div>
 
-                  {{-- <div class="col-md-10 col-md-offset-1">
+                  <div class="col-md-10 col-md-offset-1">
                         {!! Form::label('CARGAR FOTO INE:','CARGAR FOTO INE:') !!}
                         {!! Form::file('fotoine') !!}
-                        <label>Cargar Foto INE</label>
+                        {{-- <label>Cargar Foto INE</label>
                         <input type="file" name="fotoine">
-                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}"> --}}
                         
-                  </div> --}}
+                  </div>
 
                 <div class="form-group">
                       {!! Form::submit('Enviar', ['class' => 'btn btn-success ' ] ) !!}
