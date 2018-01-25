@@ -20,6 +20,14 @@ class SalidasDesarrolloSocialController extends Controller
         $this->middleware('auth');
     }
 
+    public function get_estados()
+    {
+        
+
+
+    }
+
+    
     public function index()
     {
         $salidas = DB::table('salidas')
@@ -95,7 +103,13 @@ class SalidasDesarrolloSocialController extends Controller
 
     public function create()
     {
-        return \View::make('desarrollosocial.salidas.create');
+        $estados = Estado::all();
+        $municipios = Municipio::all();
+        $localidad = Localidad::all();
+        $seccion = Seccion::all();
+        $apoyo = Apoyo::all();
+        return view("desarrollosocial.salidas.create", compact('estados', 'municipios','localidad', 'seccion', 'apoyo'));
+        //return \View::make('desarrollosocial.salidas.create');
     }
 
     public function store(Request $request)

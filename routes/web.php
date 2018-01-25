@@ -1,5 +1,7 @@
-<?php
 
+<?php
+use Illuminate\Support\Facades\Input;
+use App\Estado as Estado;
 
 Route::get('/', function () {
     return view('welcome');
@@ -55,5 +57,15 @@ Route::get('salidas/destroy/{id}', ['as' => 'salidas/destroy', 'uses' => 'Salida
 Route::post('salidas/search', ['as' => 'salidas/search', 'uses'=>'SalidasDesarrolloSocialController@search']);
 /*------------------------------------------------------------------------------------------------------------*/
 
+/*-----------------------------------------------Obtener la instancia de municipios y mostrar en select-------------------------------------------------*/
+// Route::get('desarrollosocial/salidas/create', ['as' => 'desarrollosocial.salidas.create', 
+// 	'uses' => 'SalidasDesarrolloSocialController@get_estados']);
+/*---------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+/*-------------------------------------Rutas de los perfiles--------------------------------------------------------*/
 Route::get('profile','UserController@profile');
 Route::post('profile', 'UserController@update_avatar');
+/*------------------------------------------------------------------------------------------------------------------*/
