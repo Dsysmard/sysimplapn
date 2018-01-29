@@ -92,6 +92,16 @@ class CiudadanosController extends Controller
             $ciudadano->save();
         }
 
+        if($request->hasFile('fotoinereverso')){
+            $fotoinereverso = $request->file('fotoinereverso');
+            $filename = time() . '.' . $fotoinereverso->getClientOriginalExtension();
+            Image::make($fotoinereverso)->resize(300, 300)->save( public_path('/uploads/avatars/' . $filename ) );
+
+            $ciudadano->fotoinereverso = $request->fotoinereverso;
+            $ciudadano->fotoinereverso = $filename;
+            $ciudadano->save();
+        }
+
         
         $ciudadano->save();
         return redirect('desarrollosocial/ciudadanos');

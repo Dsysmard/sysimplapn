@@ -29,6 +29,7 @@ class CreateCiudadanosTable extends Migration
             $table->string('emision');
             $table->string('vigencia');
             $table->string('fotoine')->default('default.jpg');
+            $table->string('fotoinereverso')->default('default.jpg');
             $table->timestamps();
         });
     }

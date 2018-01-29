@@ -87,6 +87,15 @@
                         
                   </div>
 
+                  <div class="col-md-10 col-md-offset-1">
+                        {!! Form::label('CARGAR FOTO INE REVERSO:','CARGAR FOTO INE REVERSO:') !!}
+                        {!! Form::file('fotoinereverso') !!}
+                        {{-- <label>Cargar Foto INE</label>
+                        <input type="file" name="fotoine">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}"> --}}
+                        
+                  </div>
+
                 <div class="form-group">
                       {!! Form::submit('Enviar', ['class' => 'btn btn-success ' ] ) !!}
                   </div>

@@ -23,5 +23,6 @@ class Ciudadano extends Model
     	'emision',
     	'vigencia',
     	'fotoine',
+        'fotoinereverso',
     ];
 }

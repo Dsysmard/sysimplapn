@@ -5,7 +5,7 @@
 <div class="big-padding text-center blue-grey white-text section-padding">
 <h1>ADMINISTRADOR DE CIUDADANOS</h1><hr/>
 </div>
-	<div class="row jumbotron big-padding text-center blue-grey">
+	<div class="row jumbotron big-padding text-center blue-grey container-fluid">
 		{!! Form::open(['route' => 'ciudadanos/search', 'method' => 'post', 'novalidate', 'class' => 'form-inline']) !!}
           <div class="form-group">
             <label for="exampleInputName2">Buscar</label>
@@ -34,6 +34,7 @@
                   <th>Emision</th>
                   <th>Vigencia</th>
                   <th>Foto INE</th>
+                  <th>Foto INE Reverso</th>
                   <th>Acciones</th>
                 </tr>
             </thead>
@@ -54,9 +55,13 @@
                     <td>{{ $ciudadano->curp}}</td>
                     <td>{{ $ciudadano->emision}}</td>
                     <td>{{ $ciudadano->vigencia}}</td>
+                    
                     <td><img src="/uploads/avatars/{{ $ciudadano->fotoine}}" style="width:150px; height:150px; float:left; border-radius:0%; margin-right:25px;">
                     </td>
-                    
+
+                    <td><img src="/uploads/avatars/{{ $ciudadano->fotoinereverso}}" style="width:150px; height:150px; float:left; border-radius:0%; margin-right:25px;">
+                    </td>
+
                     <td>
                          <a class="btn btn-primary " href="{{ url('desarrollosocial/ciudadanos/' .$ciudadano->id .'/edit')}}" >Editar</a>
                          <a class="btn btn-danger " href="{{ route('ciudadanos/destroy',['id' => $ciudadano->id] )}}" >Eliminar</a> 
