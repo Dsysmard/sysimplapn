@@ -63,6 +63,8 @@ class CiudadanosController extends Controller
 
     public function store(Request $request)
     {
+        // $hasFile = $request->hasFile('cover') && $request->cover->isValid();
+
         $ciudadano = new Ciudadano;
 
         $ciudadano->nombre = $request->nombre;
@@ -80,31 +82,54 @@ class CiudadanosController extends Controller
         $ciudadano->emision = $request->emision;
         $ciudadano->vigencia = $request->vigencia;
         
+        
+
 
 
         if($request->hasFile('fotoine')){
             $fotoine = $request->file('fotoine');
             $filename = time() . '.' . $fotoine->getClientOriginalExtension();
-            Image::make($fotoine)->resize(300, 300)->save( public_path('/uploads/avatars/' . $filename ) );
+            Image::make($fotoine)->resize(300, 300)->save( storage_path('app/images/' . $filename ) );
 
             $ciudadano->fotoine = $request->fotoine;
             $ciudadano->fotoine = $filename;
-            $ciudadano->save();
+            //$ciudadano->save();
         }
 
         if($request->hasFile('fotoinereverso')){
             $fotoinereverso = $request->file('fotoinereverso');
             $filename = time() . '.' . $fotoinereverso->getClientOriginalExtension();
-            Image::make($fotoinereverso)->resize(300, 300)->save( public_path('/uploads/avatars/' . $filename ) );
+            Image::make($fotoinereverso)->resize(300, 300)->save( storage_path('app/images/' . $filename ) );
 
             $ciudadano->fotoinereverso = $request->fotoinereverso;
             $ciudadano->fotoinereverso = $filename;
-            $ciudadano->save();
+            //$ciudadano->save();
         }
 
         
+
+        // if($hasFile)
+        // {
+        //     $extension = $request->cover->extension();
+        //     $ciudadano->extension = $extension;
+        // }
+
+        // if($ciudadano->save())
+        // {
+        //     if($hasFile)
+        //     {
+        //         $request->cover->storeAs('images', "$ciudadano->id.$extension");
+        //     }
+        // return redirect('desarrollosocial/ciudadanos');
+        
+        // }
+        // else
+        // {
+        //     return view("desarrollosocial.ciudadanos.create",["ciudadano" => $ciudadano]);
+        // }
         $ciudadano->save();
         return redirect('desarrollosocial/ciudadanos');
+        
     }
 
 

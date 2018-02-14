@@ -55,10 +55,11 @@
                     <td>{{ $ciudadano->curp}}</td>
                     <td>{{ $ciudadano->emision}}</td>
                     <td>{{ $ciudadano->vigencia}}</td>
-                    <td><img src="/sysimplan/storage/app/images/{{ $ciudadano->fotoine}}" style="width:150px; height:150px; float:left; border-radius:0%; margin-right:25px;">
+                    
+                    <td><img src="/uploads/avatars/{{ $ciudadano->fotoine}}" style="width:150px; height:150px; float:left; border-radius:0%; margin-right:25px;">
                     </td>
 
-                    <td><img src="/sysimplan/storage/app/images/{{ $ciudadano->fotoinereverso}}" style="width:150px; height:150px; float:left; border-radius:0%; margin-right:25px;">
+                    <td><img src="/uploads/avatars/{{ $ciudadano->fotoinereverso}}" style="width:150px; height:150px; float:left; border-radius:0%; margin-right:25px;">
                     </td>
 
                     <td>

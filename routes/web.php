@@ -9,7 +9,26 @@ Route::get('/', function () {
 
 Auth::routes();
 
+
+
 Route::get('/home', 'HomeController@index');
+
+// Route::get('/sysimplan/public/desarrollosocial/ciudadanos/images/{filename}',function($filename){
+	
+// 	$path = storage_path("/sysimplan/storage/app/images/$filename");
+
+// 	if(!\File::exists($path)) abort(404);
+
+// 	$file = \File::get($path);
+
+// 	$type = \File::mimeType($path);
+
+// 	$response = Response::make($file,200);
+
+// 	$response->header("Content-Type", $type);
+
+// 	return $response;
+// });
 
 /*----------------------------------------------------Rutas de Desarrollo Economico.---------------------------------------------------------------*/
 
@@ -17,6 +36,7 @@ Route::get('/home', 'HomeController@index');
 Route::resource('desarrollosocial/ciudadanos', 'CiudadanosController');
 Route::get('ciudadanos/destroy/{id}', ['as' => 'ciudadanos/destroy', 'uses' => 'CiudadanosController@destroy']);
 Route::post('ciudadanos/search', ['as' => 'ciudadanos/search', 'uses'=>'CiudadanosController@search']);
+
 
 /*------------------------------------------------------------------------------------------------------------*/
 
@@ -69,3 +89,6 @@ Route::post('salidas/search', ['as' => 'salidas/search', 'uses'=>'SalidasDesarro
 Route::get('profile','UserController@profile');
 Route::post('profile', 'UserController@update_avatar');
 /*------------------------------------------------------------------------------------------------------------------*/
+
+
+

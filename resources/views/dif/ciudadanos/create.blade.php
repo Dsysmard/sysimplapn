@@ -95,10 +95,6 @@
                         <input type="hidden" name="_token" value="{{ csrf_token() }}"> --}}
                         
                   </div>
-                  
-                  {{-- <div class="form-group">
-                    {{ Form::file('cover') }}
-                  </div> --}}
 
                 <div class="form-group">
                       {!! Form::submit('Enviar', ['class' => 'btn btn-success ' ] ) !!}

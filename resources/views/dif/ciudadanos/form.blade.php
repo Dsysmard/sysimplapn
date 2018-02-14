@@ -58,8 +58,6 @@
     <div class = "form-group">
         {{ Form::text('vigencia', ['class'=>'form-control', 'placeholder'=>'VIGENCIA']) }}
     </div>
-
-   
 {!!  Form::close() !!}
 
 </div>
